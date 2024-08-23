@@ -9,7 +9,7 @@ Each sample's amplification curve is fit to a sigmoid using non-linear least squ
 
 The vertical lines on the plot indicate these cycles.
 
-![Example Amplification Plot](path/to/your/example_plot.png)
+![Example Amplification Plot](example_plot.png)
 
 ## How to use
 
