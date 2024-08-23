@@ -1,4 +1,4 @@
-# Calculate Cycle Number for NGS
+# Calculate Cycle Number for NGS based on qPCR data
 
 Given a qPCR amplification excel file, this script will spit out:
 
@@ -14,7 +14,7 @@ The vertical lines on the plot indicate these cycles.
 Clone the repository:
 
 ```
-git clone <repo URL>
+git clone https://github.com/half-adder/qPCR_cycles_NGS.git
 ```
 
 Run the script, passing the path to the amplification excel file:
