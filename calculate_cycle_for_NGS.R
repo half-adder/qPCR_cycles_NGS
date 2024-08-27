@@ -78,7 +78,6 @@ args <- commandArgs(trailingOnly = TRUE)
 
 # Load the qPCR data
 qpcr_data_path <- args[1]
-qpcr_data_path <- "/Users/sean/Downloads/2024-08-26set3_4.xlsx"
 
 # TODO: why skip 46? Always?
 samples <- tibble(read_excel(qpcr_data_path, 1, skip = 46))
