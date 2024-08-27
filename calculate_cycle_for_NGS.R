@@ -78,6 +78,7 @@ args <- commandArgs(trailingOnly = TRUE)
 
 # Load the qPCR data
 qpcr_data_path <- args[1]
+qpcr_data_path <- "/Users/sean/Downloads/2024-08-26set3_4.xlsx"
 
 # TODO: why skip 46? Always?
 samples <- tibble(read_excel(qpcr_data_path, 1, skip = 46))
@@ -85,7 +86,12 @@ samples <- tibble(read_excel(qpcr_data_path, 1, skip = 46))
 all_sample_names <- na.omit(unique(samples$`Sample Name`))
 
 # Amplification DataFrame
-amp <- tibble(read_excel(qpcr_data_path, 2, skip = 46)) %>%
+amp <- tibble(read_excel(
+  qpcr_data_path, 2,
+  range = "R48C1:R1048576C5",
+  col_names = c("Well", "Cycle", "Target Name", "Rn", "Delta Rn"),
+  col_types = c("numeric", "numeric", "text", "numeric", "numeric")
+)) %>%
   drop_na() %>%
   inner_join(., samples, by = join_by(Well, `Target Name`)) %>%
   rename(Sample.Name = `Sample Name`)
